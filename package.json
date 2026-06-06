@@ -1,0 +1,36 @@
+{
+  "name": "co-lab",
+  "version": "3.7.2",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "colab:check-files": "node scripts/check-colab-files.mjs",
+    "colab:env-template": "node scripts/print-env-checklist.mjs",
+    "colab:predeploy": "npm run colab:check-files && npm run colab:env-template && npm run build"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest",
+    "zod": "latest",
+    "@supabase/supabase-js": "latest",
+    "@supabase/ssr": "latest",
+    "googleapis": "latest",
+    "pdf-parse": "latest",
+    "openai": "latest",
+    "pptxgenjs": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "@types/pdf-parse": "latest"
+  }
+}
