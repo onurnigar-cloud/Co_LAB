@@ -1,5 +1,5 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { WebVisualCandidate } from "@/lib/webVisuals/types";
+import { createAdminClient } from "../supabase/admin";
+import type { WebVisualCandidate } from "../webVisuals/types";
 
 export async function saveWebVisualCandidate(candidate: WebVisualCandidate) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {

@@ -1,5 +1,5 @@
-import type { SketchfabModelCandidate } from "@/lib/sketchfab/types";
-import { buildSketchfabEmbedUrl, buildSketchfabModelUrl, extractSketchfabUid, sanitizeModelName } from "@/lib/sketchfab/url";
+import type { SketchfabModelCandidate } from "./types";
+import { buildSketchfabEmbedUrl, buildSketchfabModelUrl, extractSketchfabUid, sanitizeModelName } from "./url";
 
 export async function getSketchfabOEmbedCandidate(modelUrlOrUid: string, sourceProfileUrl?: string | null): Promise<SketchfabModelCandidate> {
   const uid = extractSketchfabUid(modelUrlOrUid);

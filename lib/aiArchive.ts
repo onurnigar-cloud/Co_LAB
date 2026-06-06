@@ -1,4 +1,4 @@
-import { db } from "@/lib/data";
+import { db } from "./data";
 
 type ArchiveSearchInput = {
   area?: string;

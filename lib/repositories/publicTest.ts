@@ -1,5 +1,5 @@
-import { db, getApprovedQuestions } from "@/lib/data";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { db, getApprovedQuestions } from "../data";
+import { createAdminClient } from "../supabase/admin";
 
 export type PublicTestGenerateInput = {
   area?: string;

@@ -1,5 +1,5 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { PresentationGenerationResult } from "@/lib/ai/presentationSchema";
+import { createAdminClient } from "../supabase/admin";
+import type { PresentationGenerationResult } from "../ai/presentationSchema";
 
 export async function getSourceChunksForPresentation(sourceId: string, limit = 12) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {

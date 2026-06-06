@@ -1,4 +1,4 @@
-import { chunkText, estimateTokenCount, sha256Buffer } from "@/lib/pdf/fingerprint";
+import { chunkText, estimateTokenCount, sha256Buffer } from "./fingerprint";
 
 export type ExtractedPdf = {
   checksum: string;

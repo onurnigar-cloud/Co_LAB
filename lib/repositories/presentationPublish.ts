@@ -1,6 +1,6 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import { buildPresentationPptxBuffer } from "@/lib/presentation/pptxBuilder";
-import { getPresentationDraftForExport, sanitizeFileName } from "@/lib/repositories/presentationExport";
+import { createAdminClient } from "../supabase/admin";
+import { buildPresentationPptxBuffer } from "../presentation/pptxBuilder";
+import { getPresentationDraftForExport, sanitizeFileName } from "./presentationExport";
 
 export async function publishPresentationDraft(input: {
   draftId: string;

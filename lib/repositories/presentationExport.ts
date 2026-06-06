@@ -1,6 +1,6 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { PptxPresentationDraft, PptxSlideVisualAsset } from "@/lib/presentation/pptxBuilder";
-import { getApprovedVisualAssetsForDraft } from "@/lib/repositories/webVisualAssets";
+import { createAdminClient } from "../supabase/admin";
+import type { PptxPresentationDraft, PptxSlideVisualAsset } from "../presentation/pptxBuilder";
+import { getApprovedVisualAssetsForDraft } from "./webVisualAssets";
 
 function normalizeDraft(row: any, visualRows: any[] = []): PptxPresentationDraft {
   const visualAssetsBySlide: Record<number, PptxSlideVisualAsset> = {};

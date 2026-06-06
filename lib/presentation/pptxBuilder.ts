@@ -1,7 +1,7 @@
 import pptxgen from "pptxgenjs";
-import { colabPresentationTheme as theme } from "@/lib/presentation/designSystem";
-import { getAnimationPlan, getPptxAnimationNote } from "@/lib/presentation/animationPlan";
-import { fetchImageAsDataUri, type PreparedPptxImage } from "@/lib/presentation/imageFetcher";
+import { colabPresentationTheme as theme } from "./designSystem";
+import { getAnimationPlan, getPptxAnimationNote } from "./animationPlan";
+import { fetchImageAsDataUri, type PreparedPptxImage } from "./imageFetcher";
 
 export type PptxSlideDraft = {
   slideNumber: number;

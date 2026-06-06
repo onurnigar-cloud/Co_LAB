@@ -1,4 +1,4 @@
-import { createAdminClient } from "@/lib/supabase/admin";
+import { createAdminClient } from "../supabase/admin";
 
 export type DraftListFilter = {
   status?: "needs_review" | "approved" | "rejected";

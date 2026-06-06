@@ -1,8 +1,8 @@
-import topics from "@/data/topics.json";
-import materials from "@/data/materials.json";
-import questionBank from "@/data/question_bank.json";
-import presentations from "@/data/presentations.json";
-import aiLibrary from "@/data/ai_library.json";
+import topics from "../data/topics.json";
+import materials from "../data/materials.json";
+import questionBank from "../data/question_bank.json";
+import presentations from "../data/presentations.json";
+import aiLibrary from "../data/ai_library.json";
 
 export const db = {
   topics,

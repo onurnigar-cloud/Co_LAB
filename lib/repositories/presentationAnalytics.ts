@@ -1,4 +1,4 @@
-import { createAdminClient } from "@/lib/supabase/admin";
+import { createAdminClient } from "../supabase/admin";
 
 export type PublicationStatus = "published" | "hidden" | "archived";
 export type PublicationVisibility = "public" | "teacher" | "hidden";

@@ -1,4 +1,4 @@
-import { buildAttribution, type WebVisualCandidate } from "@/lib/webVisuals/types";
+import { buildAttribution, type WebVisualCandidate } from "./types";
 
 export async function searchNasaImages(query: string, limit = 8): Promise<WebVisualCandidate[]> {
   const params = new URLSearchParams({

@@ -1,7 +1,7 @@
-import { searchNasaImages } from "@/lib/webVisuals/nasa";
-import { searchOpenverseImages } from "@/lib/webVisuals/openverse";
-import { searchWikimediaCommons } from "@/lib/webVisuals/wikimedia";
-import type { WebVisualCandidate, WebVisualSearchInput } from "@/lib/webVisuals/types";
+import { searchNasaImages } from "./nasa";
+import { searchOpenverseImages } from "./openverse";
+import { searchWikimediaCommons } from "./wikimedia";
+import type { WebVisualCandidate, WebVisualSearchInput } from "./types";
 
 function uniqueByImageUrl(items: WebVisualCandidate[]) {
   const seen = new Set<string>();

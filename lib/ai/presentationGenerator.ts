@@ -1,5 +1,5 @@
-import { createOpenAIClient, getOpenAIModel } from "@/lib/openai/client";
-import { presentationGenerationJsonSchema, type PresentationGenerationResult } from "@/lib/ai/presentationSchema";
+import { createOpenAIClient, getOpenAIModel } from "../openai/client";
+import { presentationGenerationJsonSchema, type PresentationGenerationResult } from "./presentationSchema";
 
 export type GeneratePresentationInput = {
   sourceTitle: string;

@@ -1,4 +1,4 @@
-import { colabVisualStyle, getLayoutGuidance } from "@/lib/presentation/designSystem";
+import { colabVisualStyle, getLayoutGuidance } from "./designSystem";
 
 export function buildSlideVisualPrompt(input: {
   topicTitle: string;

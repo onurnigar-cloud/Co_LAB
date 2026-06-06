@@ -1,5 +1,5 @@
-import { searchAiArchive, decideArchiveAction } from "@/lib/aiArchive";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { searchAiArchive, decideArchiveAction } from "../aiArchive";
+import { createAdminClient } from "../supabase/admin";
 
 type ArchiveInput = {
   area?: string;

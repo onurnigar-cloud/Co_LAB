@@ -1,4 +1,4 @@
-import { buildAttribution, type WebVisualCandidate } from "@/lib/webVisuals/types";
+import { buildAttribution, type WebVisualCandidate } from "./types";
 
 function cleanHtml(input?: string) {
   return (input || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim() || null;

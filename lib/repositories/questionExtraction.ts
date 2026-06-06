@@ -1,5 +1,5 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { QuestionExtractionResult } from "@/lib/ai/questionExtractionSchema";
+import { createAdminClient } from "../supabase/admin";
+import type { QuestionExtractionResult } from "../ai/questionExtractionSchema";
 
 export async function getSourceChunksForAI(sourceId: string, limit = 8) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {

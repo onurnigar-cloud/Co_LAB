@@ -1,6 +1,6 @@
-import type { SketchfabModelCandidate, SketchfabProfileScanResult } from "@/lib/sketchfab/types";
-import { getSketchfabOEmbedCandidate } from "@/lib/sketchfab/oembed";
-import { extractSketchfabUsername } from "@/lib/sketchfab/url";
+import type { SketchfabModelCandidate, SketchfabProfileScanResult } from "./types";
+import { getSketchfabOEmbedCandidate } from "./oembed";
+import { extractSketchfabUsername } from "./url";
 
 async function fetchJson(url: string, token?: string | null) {
   const headers: Record<string, string> = {

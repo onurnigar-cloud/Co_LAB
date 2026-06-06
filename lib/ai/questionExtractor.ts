@@ -1,5 +1,5 @@
-import { createOpenAIClient, getOpenAIModel } from "@/lib/openai/client";
-import { questionExtractionJsonSchema, type QuestionExtractionResult } from "@/lib/ai/questionExtractionSchema";
+import { createOpenAIClient, getOpenAIModel } from "../openai/client";
+import { questionExtractionJsonSchema, type QuestionExtractionResult } from "./questionExtractionSchema";
 
 export type ExtractQuestionsInput = {
   sourceTitle: string;

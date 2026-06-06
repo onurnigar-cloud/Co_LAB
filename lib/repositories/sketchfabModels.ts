@@ -1,5 +1,5 @@
-import { createAdminClient } from "@/lib/supabase/admin";
-import type { SketchfabModelCandidate } from "@/lib/sketchfab/types";
+import { createAdminClient } from "../supabase/admin";
+import type { SketchfabModelCandidate } from "../sketchfab/types";
 
 export async function upsertSketchfabModel(candidate: SketchfabModelCandidate) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {

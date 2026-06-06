@@ -1,5 +1,5 @@
-import { db } from "@/lib/data";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { db } from "../data";
+import { createAdminClient } from "../supabase/admin";
 
 export async function listPublishedTopics() {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
