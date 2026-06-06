@@ -12,9 +12,9 @@
     "colab:predeploy": "npm run colab:check-files && npm run colab:env-template && npm run build"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "next": "15.4.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
     "lucide-react": "latest",
     "zod": "latest",
     "@supabase/supabase-js": "latest",
@@ -30,7 +30,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint-config-next": "15.4.6"
     "@types/pdf-parse": "latest"
   }
 }
