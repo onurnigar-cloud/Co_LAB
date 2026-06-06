@@ -1,0 +1,46 @@
+[
+  {
+    "id": "q_10_yersekilleri_001",
+    "area": "10. Sınıf",
+    "classes": [
+      "10. Sınıf",
+      "TYT"
+    ],
+    "topic": "Türkiye’de Yer Şekilleri",
+    "difficulty": "Orta",
+    "questionType": "Çoktan seçmeli",
+    "stem": "Türkiye’de kısa mesafelerde yükselti ve yer şekillerinin değişmesi aşağıdakilerden hangisini doğrudan artırır?",
+    "options": [
+      "Nüfus artış hızını",
+      "İklim çeşitliliğini",
+      "Denizlerin tuzluluk oranını",
+      "Jeolojik zamanların süresini",
+      "Yerel saat farkını"
+    ],
+    "answer": "B",
+    "visitorShowAnswer": false,
+    "approvalStatus": "approved"
+  },
+  {
+    "id": "q_9_harita_001",
+    "area": "9. Sınıf",
+    "classes": [
+      "9. Sınıf",
+      "TYT"
+    ],
+    "topic": "Mekânın Aynası: Haritalar",
+    "difficulty": "Kolay",
+    "questionType": "Çoktan seçmeli",
+    "stem": "Haritalarda kullanılan renk, çizgi ve sembollerin anlamını gösteren bölüme ne ad verilir?",
+    "options": [
+      "Ölçek",
+      "Lejant",
+      "Koordinat",
+      "Projeksiyon",
+      "Profil"
+    ],
+    "answer": "B",
+    "visitorShowAnswer": false,
+    "approvalStatus": "approved"
+  }
+]

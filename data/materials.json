@@ -1,0 +1,24 @@
+[
+  {
+    "id": "mat-10-ders-notu",
+    "title": "10. Sınıf Coğrafya Ders Notu",
+    "area": "10. Sınıf",
+    "topic": "Genel / konu ataması bekliyor",
+    "type": "Ders notu",
+    "visibility": "public",
+    "visitorDirectSourceAccess": false,
+    "servedThrough": "topic_card_or_admin_release"
+  },
+  {
+    "id": "mat-ayt-test-admin",
+    "title": "AYT / 11 ve 12. Sınıf Uyumlu Coğrafya Testi",
+    "area": "AYT / 11-12. Sınıf",
+    "topic": "AYT ve 11-12. sınıf ortak konuları",
+    "type": "Test",
+    "visibility": "admin",
+    "hasEmbeddedAnswerKey": true,
+    "answerKeyStartPage": "250",
+    "visitorDirectSourceAccess": false,
+    "servedThrough": "question_bank_template_only"
+  }
+]

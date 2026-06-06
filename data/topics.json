@@ -1,0 +1,109 @@
+{
+  "9": [
+    {
+      "id": "9-haritalar",
+      "title": "Mekânın Aynası: Haritalar",
+      "area": "9. Sınıf",
+      "tags": [
+        "9. Sınıf",
+        "Harita"
+      ],
+      "summary": "Ölçek, yön, lejant ve harita okuryazarlığı.",
+      "mapUrl": "https://www.google.com/maps?q=%C4%B0zmir&output=embed",
+      "models": [
+        {
+          "title": "İzohips Modeli",
+          "purpose": "Yükselti ve eğim ilişkisi.",
+          "provider": "planned"
+        }
+      ]
+    }
+  ],
+  "10": [
+    {
+      "id": "10-turkiye-yersekilleri",
+      "title": "Türkiye’de Yer Şekilleri",
+      "area": "10. Sınıf",
+      "tags": [
+        "10. Sınıf",
+        "Fiziki Coğrafya"
+      ],
+      "summary": "Türkiye’de dağlar, ovalar, platolar, akarsular ve yer şekillerinin insan faaliyetleriyle ilişkisi incelenir.",
+      "mapUrl": "https://www.google.com/maps?q=Pamukkale%20Travertenleri&output=embed",
+      "models": [
+        {
+          "title": "Vadi Modeli",
+          "purpose": "Akarsu aşındırması ve vadi oluşumu.",
+          "provider": "planned"
+        },
+        {
+          "title": "Plato Modeli",
+          "purpose": "Plato yüzeyinin yükselti ve çevreyle ilişkisi.",
+          "provider": "Sketchfab",
+          "embed": "https://sketchfab.com/models/95d05c602eab4dcba20b53481c17c70f/embed"
+        },
+        {
+          "title": "Delta Modeli",
+          "purpose": "Akarsu biriktirmesi ve delta oluşumu.",
+          "provider": "planned"
+        }
+      ]
+    }
+  ],
+  "11": [
+    {
+      "id": "11-genel",
+      "title": "11. Sınıf Coğrafya Ders Notu",
+      "area": "11. Sınıf",
+      "tags": [
+        "11. Sınıf",
+        "Genel Ders Notu"
+      ],
+      "summary": "11. sınıf içerikleri daha sonra konu başlıklarına ayrıştırılacaktır.",
+      "mapUrl": "https://www.google.com/maps?q=T%C3%BCrkiye&output=embed",
+      "models": []
+    }
+  ],
+  "12": [
+    {
+      "id": "12-genel",
+      "title": "12. Sınıf Coğrafya Ders Notu",
+      "area": "12. Sınıf",
+      "tags": [
+        "12. Sınıf",
+        "Genel Ders Notu"
+      ],
+      "summary": "12. sınıf içerikleri daha sonra konu başlıklarına ayrıştırılacaktır.",
+      "mapUrl": "https://www.google.com/maps?q=D%C3%BCnya&output=embed",
+      "models": []
+    }
+  ],
+  "TYT": [
+    {
+      "id": "tyt-harita-bilgisi",
+      "title": "Harita Bilgisi",
+      "area": "TYT",
+      "tags": [
+        "TYT",
+        "Sınav Hazırlık"
+      ],
+      "summary": "Ölçek, konum, izohips ve harita soruları.",
+      "mapUrl": "https://www.google.com/maps?q=T%C3%BCrkiye&output=embed",
+      "models": []
+    }
+  ],
+  "AYT": [
+    {
+      "id": "ayt-genel",
+      "title": "AYT Coğrafya Genel Tekrar",
+      "area": "AYT",
+      "tags": [
+        "AYT",
+        "Sınav Hazırlık"
+      ],
+      "summary": "AYT coğrafya içerikleri ve 11-12. sınıf ortak konular.",
+      "mapUrl": "https://www.google.com/maps?q=D%C3%BCnya&output=embed",
+      "models": []
+    }
+  ]
+}
