@@ -1,6 +1,6 @@
 {
   "name": "co-lab",
-  "version": "3.7.6",
+  "version": "3.7.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,7 +16,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "lucide-react": "latest",
-    "zod": "latest",
+    "zod": "3.25.76",
     "@supabase/supabase-js": "latest",
     "@supabase/ssr": "latest",
     "googleapis": "latest",
