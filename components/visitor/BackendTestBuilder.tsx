@@ -1,7 +1,7 @@
  "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { PrintableTestSheet } from "@/components/visitor/print/PrintableTestSheet";
+import { PrintableTestSheet } from "./print/PrintableTestSheet";
 
 type TopicOption = {
   area: string;

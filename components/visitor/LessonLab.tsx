@@ -1,7 +1,7 @@
  "use client";
 
 import { useMemo, useState } from "react";
-import type { AreaKey, Topic, ThreeDModel } from "@/types/colab";
+import type { AreaKey, Topic, ThreeDModel } from "../../types/colab";
 
 type Props = {
   topics: Record<string, Topic[]>;
