@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { searchWebVisuals } from "@/lib/webVisuals/search";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { searchWebVisuals } from "../../../../../lib/webVisuals/search";
 
 const schema = z.object({
   query: z.string().min(2),

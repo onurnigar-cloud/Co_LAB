@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { savePresentationPreviewEdits } from "@/lib/repositories/presentationDrafts";
+import { requireAdminApi } from "../../../../../../lib/security/adminApi";
+import { savePresentationPreviewEdits } from "../../../../../../lib/repositories/presentationDrafts";
 
 const slideSchema = z.object({
   slideNumber: z.number(),

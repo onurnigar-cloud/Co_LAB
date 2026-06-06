@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { LoginForm } from "@/components/auth/LoginForm";
-import { hasSupabaseEnv } from "@/lib/auth/admin";
+import { LoginForm } from "../../../components/auth/LoginForm";
+import { hasSupabaseEnv } from "../../../lib/auth/admin";
 
 export default function LoginPage() {
   const envReady = hasSupabaseEnv();

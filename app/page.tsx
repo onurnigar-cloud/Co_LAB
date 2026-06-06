@@ -1,9 +1,9 @@
-import { VisitorHeader } from "@/components/visitor/VisitorHeader";
-import { LessonLab } from "@/components/visitor/LessonLab";
-import { BackendTestBuilder } from "@/components/visitor/BackendTestBuilder";
-import { PublicPresentationLibrary } from "@/components/visitor/presentations/PublicPresentationLibrary";
-import { Topic3DBoard } from "@/components/visitor/threeD/Topic3DBoard";
-import { getPublicTopics } from "@/lib/data";
+import { VisitorHeader } from "../components/visitor/VisitorHeader";
+import { LessonLab } from "../components/visitor/LessonLab";
+import { BackendTestBuilder } from "../components/visitor/BackendTestBuilder";
+import { PublicPresentationLibrary } from "../components/visitor/presentations/PublicPresentationLibrary";
+import { Topic3DBoard } from "../components/visitor/threeD/Topic3DBoard";
+import { getPublicTopics } from "../lib/data";
 
 export default function HomePage() {
   const topics = getPublicTopics();

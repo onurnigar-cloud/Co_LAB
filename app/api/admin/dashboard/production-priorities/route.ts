@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { getProductionPriorities } from "@/lib/repositories/contentDashboard";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { getProductionPriorities } from "../../../../../lib/repositories/contentDashboard";
 
 export async function GET(request: Request) {
   const guard = await requireAdminApi();

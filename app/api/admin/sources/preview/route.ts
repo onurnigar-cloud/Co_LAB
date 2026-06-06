@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { extractDriveFileId, getDriveFileMetadata } from "@/lib/google/drive";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { extractDriveFileId, getDriveFileMetadata } from "../../../../../lib/google/drive";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
 const schema = z.object({
   driveUrlOrId: z.string().min(10),

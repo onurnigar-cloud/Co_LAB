@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { listSketchfabModels } from "@/lib/repositories/sketchfabModels";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { listSketchfabModels } from "../../../../../lib/repositories/sketchfabModels";
 
 export async function GET(request: Request) {
   const guard = await requireAdminApi();

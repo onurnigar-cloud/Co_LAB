@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { attachVisualToPresentationSlide } from "@/lib/repositories/webVisualAssets";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { attachVisualToPresentationSlide } from "../../../../../lib/repositories/webVisualAssets";
 
 const schema = z.object({
   presentationDraftId: z.string().min(2),

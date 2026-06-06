@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { getPresentationDraftDetail } from "@/lib/repositories/presentationDrafts";
-import { getApprovedVisualAssetsForDraft } from "@/lib/repositories/webVisualAssets";
+import { requireAdminApi } from "../../../../../../lib/security/adminApi";
+import { getPresentationDraftDetail } from "../../../../../../lib/repositories/presentationDrafts";
+import { getApprovedVisualAssetsForDraft } from "../../../../../../lib/repositories/webVisualAssets";
 
 const schema = z.object({
   draftId: z.string().min(2),

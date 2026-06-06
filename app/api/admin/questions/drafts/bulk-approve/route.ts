@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { bulkApproveQuestionDrafts } from "@/lib/repositories/questionDrafts";
+import { requireAdminApi } from "../../../../../../lib/security/adminApi";
+import { bulkApproveQuestionDrafts } from "../../../../../../lib/repositories/questionDrafts";
 
 const schema = z.object({
   draftIds: z.array(z.string().min(2)).min(1),

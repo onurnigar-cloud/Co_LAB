@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { createAdminClient } from "../../../../../lib/supabase/admin";
 
 const schema = z.object({
   presentationDraftId: z.string().min(2),

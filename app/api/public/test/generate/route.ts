@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { generatePublicTest } from "@/lib/repositories/publicTest";
+import { generatePublicTest } from "../../../../../lib/repositories/publicTest";
 
 const schema = z.object({
   area: z.string().optional(),

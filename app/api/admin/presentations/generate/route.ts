@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { generatePresentationWithAI } from "@/lib/ai/presentationGenerator";
-import { getSourceChunksForPresentation, savePresentationDraft } from "@/lib/repositories/presentationDrafts";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { generatePresentationWithAI } from "../../../../../lib/ai/presentationGenerator";
+import { getSourceChunksForPresentation, savePresentationDraft } from "../../../../../lib/repositories/presentationDrafts";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
 const schema = z.object({
   sourceId: z.string().optional(),

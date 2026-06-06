@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createPresentationDownloadUrl } from "@/lib/repositories/presentationPublish";
-import { recordPresentationDownloadEvent } from "@/lib/repositories/presentationAnalytics";
+import { createPresentationDownloadUrl } from "../../../../../lib/repositories/presentationPublish";
+import { recordPresentationDownloadEvent } from "../../../../../lib/repositories/presentationAnalytics";
 
 const schema = z.object({
   publicationId: z.string().min(2),

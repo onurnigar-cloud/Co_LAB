@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { createAdminClient } from "../../../../../lib/supabase/admin";
 
 export async function GET(request: Request) {
   const guard = await requireAdminApi();

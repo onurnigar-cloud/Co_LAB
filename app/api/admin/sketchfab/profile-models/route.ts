@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { scanSketchfabProfile } from "@/lib/sketchfab/profile";
-import { bulkUpsertSketchfabModels } from "@/lib/repositories/sketchfabModels";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { scanSketchfabProfile } from "../../../../../lib/sketchfab/profile";
+import { bulkUpsertSketchfabModels } from "../../../../../lib/repositories/sketchfabModels";
 
 const schema = z.object({
   profileUrlOrUsername: z.string().default("https://sketchfab.com/onurnigar/models"),

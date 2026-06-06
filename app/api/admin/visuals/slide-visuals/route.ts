@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { getApprovedVisualAssetsForDraft } from "@/lib/repositories/webVisualAssets";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { getApprovedVisualAssetsForDraft } from "../../../../../lib/repositories/webVisualAssets";
 
 export async function GET(request: Request) {
   const guard = await requireAdminApi();

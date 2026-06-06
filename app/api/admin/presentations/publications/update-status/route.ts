@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { updatePublicationStatus } from "@/lib/repositories/presentationAnalytics";
+import { requireAdminApi } from "../../../../../../lib/security/adminApi";
+import { updatePublicationStatus } from "../../../../../../lib/repositories/presentationAnalytics";
 
 const schema = z.object({
   publicationId: z.string().min(2),

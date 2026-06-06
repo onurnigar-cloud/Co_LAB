@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { extractQuestionsWithAI } from "@/lib/ai/questionExtractor";
-import { getSourceChunksForAI, saveQuestionExtractionDrafts } from "@/lib/repositories/questionExtraction";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { extractQuestionsWithAI } from "../../../../../lib/ai/questionExtractor";
+import { getSourceChunksForAI, saveQuestionExtractionDrafts } from "../../../../../lib/repositories/questionExtraction";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
 const schema = z.object({
   sourceId: z.string().optional(),

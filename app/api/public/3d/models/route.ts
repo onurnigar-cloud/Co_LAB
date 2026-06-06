@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listPublic3DModels } from "@/lib/repositories/sketchfabModels";
+import { listPublic3DModels } from "../../../../../lib/repositories/sketchfabModels";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

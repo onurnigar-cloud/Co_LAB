@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { approveQuestionDraft } from "@/lib/repositories/questionExtraction";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { approveQuestionDraft } from "../../../../../lib/repositories/questionExtraction";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
 const schema = z.object({
   draftId: z.string().min(2),

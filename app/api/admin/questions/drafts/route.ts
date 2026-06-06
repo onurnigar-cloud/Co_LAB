@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { listQuestionDrafts } from "@/lib/repositories/questionDrafts";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { listQuestionDrafts } from "../../../../../lib/repositories/questionDrafts";
 
 export async function GET(request: Request) {
   const guard = await requireAdminApi();

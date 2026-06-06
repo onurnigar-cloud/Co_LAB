@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { updateSketchfabModel } from "@/lib/repositories/sketchfabModels";
+import { requireAdminApi } from "../../../../../../lib/security/adminApi";
+import { updateSketchfabModel } from "../../../../../../lib/repositories/sketchfabModels";
 
 const schema = z.object({
   modelId: z.string().min(2),

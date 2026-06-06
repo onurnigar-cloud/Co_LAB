@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listPublicQuestionTopics } from "@/lib/repositories/publicTest";
+import { listPublicQuestionTopics } from "../../../../../lib/repositories/publicTest";
 
 export async function GET() {
   const topics = await listPublicQuestionTopics();

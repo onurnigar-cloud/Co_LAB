@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { extractDriveFileId, downloadDriveFileAsBuffer, getDriveFileMetadata } from "@/lib/google/drive";
-import { extractPdfText } from "@/lib/pdf/extract";
-import { upsertSourceRecord, insertSourceChunks } from "@/lib/repositories/sources";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { extractDriveFileId, downloadDriveFileAsBuffer, getDriveFileMetadata } from "../../../../../lib/google/drive";
+import { extractPdfText } from "../../../../../lib/pdf/extract";
+import { upsertSourceRecord, insertSourceChunks } from "../../../../../lib/repositories/sources";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
 const schema = z.object({
   title: z.string().min(2),

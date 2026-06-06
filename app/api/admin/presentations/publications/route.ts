@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
 import {
   listAdminPublications,
   savePublicationQualityCheck,
-} from "@/lib/repositories/presentationAnalytics";
+} from "../../../../../lib/repositories/presentationAnalytics";
 
 const qualitySchema = z.object({
   publicationId: z.string().min(2),

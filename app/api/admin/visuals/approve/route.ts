@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { saveWebVisualCandidate } from "@/lib/repositories/webVisualAssets";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { saveWebVisualCandidate } from "../../../../../lib/repositories/webVisualAssets";
 
 const candidateSchema = z.object({
   provider: z.enum(["wikimedia", "nasa", "openverse"]),

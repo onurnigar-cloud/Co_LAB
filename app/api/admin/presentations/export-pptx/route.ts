@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 import { z } from "zod";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { buildPresentationPptxBuffer, type PptxPresentationDraft } from "@/lib/presentation/pptxBuilder";
-import { getPresentationDraftForExport, sanitizeFileName } from "@/lib/repositories/presentationExport";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { buildPresentationPptxBuffer, type PptxPresentationDraft } from "../../../../../lib/presentation/pptxBuilder";
+import { getPresentationDraftForExport, sanitizeFileName } from "../../../../../lib/repositories/presentationExport";
 
 const slideSchema = z.object({
   slideNumber: z.number(),

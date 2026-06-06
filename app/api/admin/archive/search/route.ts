@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { searchArchive } from "@/lib/repositories/archive";
+import { searchArchive } from "../../../../../lib/repositories/archive";
 
 const schema = z.object({
   area: z.string().optional(),

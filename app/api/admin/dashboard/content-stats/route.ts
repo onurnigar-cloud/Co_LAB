@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { requireAdminApi } from "@/lib/security/adminApi";
-import { getContentDashboardStats } from "@/lib/repositories/contentDashboard";
+import { requireAdminApi } from "../../../../../lib/security/adminApi";
+import { getContentDashboardStats } from "../../../../../lib/repositories/contentDashboard";
 
 export async function GET() {
   const guard = await requireAdminApi();

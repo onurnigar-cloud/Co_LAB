@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listPublicPresentations } from "@/lib/repositories/presentationPublish";
+import { listPublicPresentations } from "../../../../lib/repositories/presentationPublish";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

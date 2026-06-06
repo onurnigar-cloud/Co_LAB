@@ -1,18 +1,18 @@
-import { AdminSidebar } from "@/components/admin/AdminSidebar";
-import { db } from "@/lib/data";
-import { searchAiArchive, decideArchiveAction } from "@/lib/aiArchive";
-import { requireAdmin } from "@/lib/auth/admin";
-import { SourceProcessor } from "@/components/admin/sources/SourceProcessor";
-import { QuestionExtractor } from "@/components/admin/questions/QuestionExtractor";
-import { QuestionDraftReviewPanel } from "@/components/admin/questions/QuestionDraftReviewPanel";
-import { PresentationGeneratorPanel } from "@/components/admin/presentations/PresentationGeneratorPanel";
-import { WebVisualSearchPanel } from "@/components/admin/visuals/WebVisualSearchPanel";
-import { SlideVisualAttachPanel } from "@/components/admin/visuals/SlideVisualAttachPanel";
-import { SlidePreviewEditorPanel } from "@/components/admin/presentations/preview/SlidePreviewEditorPanel";
-import { PresentationPublishPanel } from "@/components/admin/presentations/publish/PresentationPublishPanel";
-import { PublicationQualityPanel } from "@/components/admin/presentations/quality/PublicationQualityPanel";
-import { AdminMainDashboardPanel } from "@/components/admin/dashboard/AdminMainDashboardPanel";
-import { SketchfabModelManagerPanel } from "@/components/admin/threeD/SketchfabModelManagerPanel";
+import { AdminSidebar } from "../../components/admin/AdminSidebar";
+import { db } from "../../lib/data";
+import { searchAiArchive, decideArchiveAction } from "../../lib/aiArchive";
+import { requireAdmin } from "../../lib/auth/admin";
+import { SourceProcessor } from "../../components/admin/sources/SourceProcessor";
+import { QuestionExtractor } from "../../components/admin/questions/QuestionExtractor";
+import { QuestionDraftReviewPanel } from "../../components/admin/questions/QuestionDraftReviewPanel";
+import { PresentationGeneratorPanel } from "../../components/admin/presentations/PresentationGeneratorPanel";
+import { WebVisualSearchPanel } from "../../components/admin/visuals/WebVisualSearchPanel";
+import { SlideVisualAttachPanel } from "../../components/admin/visuals/SlideVisualAttachPanel";
+import { SlidePreviewEditorPanel } from "../../components/admin/presentations/preview/SlidePreviewEditorPanel";
+import { PresentationPublishPanel } from "../../components/admin/presentations/publish/PresentationPublishPanel";
+import { PublicationQualityPanel } from "../../components/admin/presentations/quality/PublicationQualityPanel";
+import { AdminMainDashboardPanel } from "../../components/admin/dashboard/AdminMainDashboardPanel";
+import { SketchfabModelManagerPanel } from "../../components/admin/threeD/SketchfabModelManagerPanel";
 
 export default async function AdminPage() {
   const auth = await requireAdmin();
