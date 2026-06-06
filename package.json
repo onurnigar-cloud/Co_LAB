@@ -1,6 +1,6 @@
 {
   "name": "co-lab",
-  "version": "3.7.9",
+  "version": "3.7.10",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -20,7 +20,7 @@
     "@supabase/supabase-js": "latest",
     "@supabase/ssr": "latest",
     "googleapis": "latest",
-    "pdf-parse": "latest",
+    "pdf-parse": "1.1.1",
     "openai": "latest",
     "pptxgenjs": "latest"
   },
@@ -31,6 +31,6 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "15.4.6",
-    "@types/pdf-parse": "latest"
+    "@types/pdf-parse": "1.1.5"
   }
 }

@@ -1,3 +1,4 @@
+import pdfParse from "pdf-parse";
 import { chunkText, estimateTokenCount, sha256Buffer } from "./fingerprint";
 
 export type ExtractedPdf = {
@@ -15,7 +16,6 @@ export async function extractPdfText(buffer: Buffer): Promise<ExtractedPdf> {
   const checksum = sha256Buffer(buffer);
 
   try {
-    const pdfParse = (await import("pdf-parse")).default;
     const parsed = await pdfParse(buffer);
     const text = parsed.text ?? "";
     const chunks = chunkText(text).map((chunk, index) => ({
@@ -30,7 +30,7 @@ export async function extractPdfText(buffer: Buffer): Promise<ExtractedPdf> {
       text,
       chunks,
     };
-  } catch (error) {
+  } catch {
     // PDF parse bazı serverless ortamlarda sorun çıkarırsa işlemi tamamen durdurmamak için güvenli fallback.
     return {
       checksum,
