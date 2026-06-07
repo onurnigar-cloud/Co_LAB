@@ -423,7 +423,6 @@ export async function buildPresentationPptxBuffer(draft: PptxPresentationDraft) 
   pptx.company = "Co_LAB";
   pptx.subject = draft.topicTitle;
   pptx.title = draft.presentationTitle;
-  pptx.lang = "tr-TR";
   pptx.theme = {
     headFontFace: theme.fonts.heading,
     bodyFontFace: theme.fonts.body,
