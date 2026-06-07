@@ -5,6 +5,9 @@ import { extractPdfText } from "../../../../../lib/pdf/extract";
 import { upsertSourceRecord, insertSourceChunks } from "../../../../../lib/repositories/sources";
 import { requireAdminApi } from "../../../../../lib/security/adminApi";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 const schema = z.object({
   title: z.string().min(2),
   driveUrlOrId: z.string().min(10),
