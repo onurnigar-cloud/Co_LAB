@@ -31,7 +31,6 @@ export async function extractPdfText(buffer: Buffer): Promise<ExtractedPdf> {
       chunks,
     };
   } catch {
-    // PDF parse bazı serverless ortamlarda sorun çıkarırsa işlemi tamamen durdurmamak için güvenli fallback.
     return {
       checksum,
       pageCount: null,

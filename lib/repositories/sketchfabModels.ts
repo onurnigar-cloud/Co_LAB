@@ -99,7 +99,7 @@ export async function updateSketchfabModel(input: {
   visibility: "admin" | "teacher" | "public" | "hidden";
 }) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
-    return { localOnly: true, modelId: input.modelId, ...input };
+    return { localOnly: true, ...input };
   }
 
   const supabase = createAdminClient();

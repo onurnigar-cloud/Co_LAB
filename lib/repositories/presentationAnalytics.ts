@@ -54,7 +54,7 @@ export async function updatePublicationStatus(input: {
   publicationStatus: PublicationStatus;
 }) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
-    return { localOnly: true, publicationId: input.publicationId, ...input };
+    return { localOnly: true, ...input };
   }
 
   const supabase = createAdminClient();
