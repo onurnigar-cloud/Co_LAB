@@ -425,8 +425,7 @@ export async function buildPresentationPptxBuffer(draft: PptxPresentationDraft) 
   pptx.title = draft.presentationTitle;
   pptx.theme = {
     headFontFace: theme.fonts.heading,
-    bodyFontFace: theme.fonts.body,
-    lang: "tr-TR"
+    bodyFontFace: theme.fonts.body
   };
 
   const cover = pptx.addSlide();
