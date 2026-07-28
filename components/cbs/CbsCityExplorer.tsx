@@ -103,7 +103,7 @@ const points: Poi[] = [
   { id: 10, name: "Kıyı İstasyonu", detail: "24 saat", layer: "fuel", x: 368, y: 790, accessNode: "westSouth", access: { x: 368, y: 790 } },
   { id: 11, name: "Tarihî Çarşı", detail: "Koruma alanı", layer: "heritage", x: 385, y: 395, accessNode: "oldHeritage", access: { x: 385, y: 400 } },
   { id: 12, name: "Saat Meydanı", detail: "Kültür rotası", layer: "heritage", x: 568, y: 452, accessNode: "oldClock", access: { x: 568, y: 480 } },
-  { id: 13, name: "Nehir Parkı", detail: "Yürüyüş ve dinlenme alanı", layer: "parks", x: 846, y: 286, accessNode: "parkNorth" },
+  { id: 13, name: "Nehir Parkı", detail: "Yürüyüş ve dinlenme alanı", layer: "parks", x: 825, y: 246, accessNode: "parkPlaza" },
   { id: 14, name: "Kıyı Parkı", detail: "Sahil ve seyir alanı", layer: "parks", x: 145, y: 132, accessNode: "westRingN2" },
 ];
 
@@ -122,8 +122,8 @@ const roadNodes: Record<string, MapPoint> = {
   s4: { x: 820, y: 680 },
   s5: { x: 980, y: 675 },
   c5: { x: 1160, y: 685 },
-  r5: { x: 1300, y: 692 },
-  farS: { x: 1460, y: 650 },
+  r5: { x: 1560, y: 650 },
+  farS: { x: 1640, y: 650 },
 
   westSouth: { x: 340, y: 790 },
   westRingS: { x: 235, y: 655 },
@@ -140,36 +140,38 @@ const roadNodes: Record<string, MapPoint> = {
   northB: { x: 900, y: 95 },
   northC: { x: 1080, y: 95 },
   c0: { x: 1200, y: 95 },
-  r0: { x: 1320, y: 90 },
-  farN: { x: 1500, y: 95 },
+  r0: { x: 1560, y: 90 },
+  farN: { x: 1640, y: 95 },
 
   h180a: { x: 700, y: 180 },
   h180b: { x: 900, y: 180 },
   h180c: { x: 1050, y: 180 },
   c1: { x: 1205, y: 185 },
-  r1: { x: 1320, y: 180 },
+  r1: { x: 1560, y: 180 },
   h180f: { x: 1500, y: 185 },
 
-  p2: { x: 840, y: 330 },
+  p2: { x: 815, y: 370 },
   h330b: { x: 1000, y: 335 },
   c2: { x: 1205, y: 330 },
-  r2: { x: 1320, y: 330 },
+  r2: { x: 1560, y: 330 },
   h330f: { x: 1500, y: 330 },
 
   p3: { x: 820, y: 450 },
   museumGate: { x: 900, y: 450 },
   h450b: { x: 1000, y: 450 },
   c3: { x: 1200, y: 450 },
-  r3: { x: 1320, y: 450 },
+  r3: { x: 1560, y: 450 },
   h450f: { x: 1500, y: 450 },
 
   p4: { x: 830, y: 560 },
   h560b: { x: 1000, y: 560 },
   c4: { x: 1200, y: 560 },
-  r4: { x: 1320, y: 560 },
+  r4: { x: 1560, y: 560 },
   h560f: { x: 1500, y: 560 },
 
-  parkNorth: { x: 900, y: 280 },
+  parkPlaza: { x: 825, y: 246 },
+  parkEastWalk: { x: 900, y: 245 },
+  parkEastGate: { x: 1005, y: 300 },
   oldSouth: { x: 580, y: 630 },
   oldRiver: { x: 590, y: 480 },
   oldClock: { x: 550, y: 480 },
@@ -239,9 +241,10 @@ const roadEdges: RoadEdge[] = [
   { from: "s4", to: "p4", kind: "scenic" },
   { from: "p4", to: "p3", kind: "scenic" },
   { from: "p3", to: "p2", kind: "scenic" },
-  { from: "p2", to: "parkNorth", kind: "scenic" },
-  { from: "parkNorth", to: "h330b", kind: "scenic" },
-  { from: "parkNorth", to: "h180b", kind: "scenic" },
+  { from: "p2", to: "parkPlaza", kind: "scenic" },
+  { from: "parkPlaza", to: "parkEastWalk", kind: "scenic" },
+  { from: "parkEastWalk", to: "parkEastGate", kind: "scenic" },
+  { from: "parkEastGate", to: "h330b", kind: "scenic" },
 
   { from: "oldSouth", to: "s3", kind: "local" },
   { from: "oldSouth", to: "oldRiver", kind: "local" },
@@ -315,11 +318,16 @@ function findRoadPath(startNode: string, targetNode: string, route: RouteKey) {
 }
 
 function buildRoute(target: Poi, route: RouteKey): RouteResult {
-  const scenicWaypoint = target.x > 700 ? "parkNorth" : "westRingN2";
+  const scenicWaypoint = target.x > 700 ? "parkPlaza" : "westRingN2";
+  const transitWaypoint = target.x > 1100 ? "r3" : null;
   const stops =
     route === "scenic" && target.accessNode !== scenicWaypoint
       ? [START_NODE, scenicWaypoint, target.accessNode]
-      : [START_NODE, target.accessNode];
+      : route === "transit" &&
+          transitWaypoint &&
+          target.accessNode !== transitWaypoint
+        ? [START_NODE, transitWaypoint, target.accessNode]
+        : [START_NODE, target.accessNode];
   const pointsOnRoad = stops.slice(1).flatMap((stop, index) => {
     const segment = findRoadPath(stops[index], stop, route);
     return index === 0 ? segment : segment.slice(1);
@@ -649,18 +657,6 @@ export function CbsCityExplorer() {
               viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
               aria-label="Alternatif güzergâhlar"
             >
-              {routeKeys
-                .filter((key) => key !== selectedRoute)
-                .map((key) => (
-                  <polyline
-                    className={styles.routeInactive}
-                    key={key}
-                    points={routeResults[key].points.map((point) => `${point.x},${point.y}`).join(" ")}
-                    stroke={routeMeta[key].color}
-                    strokeDasharray={key === "transit" ? "14 10" : undefined}
-                    vectorEffect="non-scaling-stroke"
-                  />
-                ))}
               <polyline
                 className={styles.routeHalo}
                 points={routeResults[selectedRoute].points
@@ -707,12 +703,18 @@ export function CbsCityExplorer() {
                 type="button"
               >
                 <Icon size={15} strokeWidth={2.4} />
-                <span>{point.name}</span>
+                <span className={point.x > MAP_WIDTH * 0.68 ? styles.poiLabelLeft : ""}>
+                  {point.name}
+                </span>
               </button>
             );
           })}
 
-          <div className={styles.dataStrip}>
+          <div
+            className={`${styles.dataStrip} ${
+              mode === "route" ? styles.routeDataStrip : ""
+            }`}
+          >
             <span><LocateFixed size={16} /><b>Başlangıç</b> Gezi noktası</span>
             <span><Navigation size={16} /><b>Hedef</b> {targetPoi.name}</span>
             <span><Route size={16} /><b>Ölçülen rota</b> {routeResults[selectedRoute].distanceLabel}</span>
@@ -722,8 +724,8 @@ export function CbsCityExplorer() {
 
         <aside
           className={`${styles.layerPanel} ${
-            mobilePanel === "layers" ? styles.mobileOpen : ""
-          }`}
+            mode === "route" ? styles.routeLayerPanel : ""
+          } ${mobilePanel === "layers" ? styles.mobileOpen : ""}`}
         >
           <button
             className={styles.panelClose}
