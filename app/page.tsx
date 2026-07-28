@@ -4,6 +4,7 @@ import { BackendTestBuilder } from "../components/visitor/BackendTestBuilder";
 import { PublicPresentationLibrary } from "../components/visitor/presentations/PublicPresentationLibrary";
 import { Topic3DBoard } from "../components/visitor/threeD/Topic3DBoard";
 import { getPublicTopics } from "../lib/data";
+import Link from "next/link";
 
 export default function HomePage() {
   const topics = getPublicTopics();
@@ -52,6 +53,14 @@ export default function HomePage() {
               <h3>Derslik</h3>
               <p>Konuya göre doküman, video, harita, 3D model, sunum ve çıktı bağlantıları açılır.</p>
             </article>
+            <Link className="card" href="/cbs-sehri-kesfet">
+              <h3>CBS ile Şehri Keşfet</h3>
+              <p>Konum, veri katmanı ve alternatif güzergâh ilişkisini etkileşimli bir şehir üzerinde keşfedin.</p>
+              <div className="tagRow">
+                <span className="tag tagPublic">Etkileşimli etkinlik</span>
+                <span className="tag">Kuşbakışı şehir</span>
+              </div>
+            </Link>
             <article className="card">
               <h3>Test Oluşturucu</h3>
               <p>Ziyaretçi konu seçer; sistem onaylı soru havuzundan temiz test şablonu üretir.</p>

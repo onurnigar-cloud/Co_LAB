@@ -14,6 +14,7 @@ export function VisitorHeader() {
 
         <nav className="menu">
           <a href="#derslik">Derslik</a>
+          <Link href="/cbs-sehri-kesfet">CBS Atölyesi</Link>
           <a href="#sunumlar">Sunumlar</a>
           <a href="#testolustur">Test Oluştur</a>
           <a href="#tahta">3D Tahta</a>
