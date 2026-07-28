@@ -189,6 +189,7 @@
 .layerPanel {
   right: 22px;
   width: 310px;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .panelClose {
@@ -392,6 +393,11 @@
   transition: opacity 150ms ease, transform 150ms ease;
 }
 
+.poiMarker > .poiLabelLeft {
+  right: 40px;
+  left: auto;
+}
+
 .poiMarker:hover,
 .selectedPoi {
   z-index: 11;
@@ -439,11 +445,6 @@
   transition: opacity 180ms ease, stroke-width 180ms ease;
 }
 
-.routeInactive {
-  opacity: 0.26;
-  stroke-width: 6;
-}
-
 .routeHalo {
   opacity: 0.88;
   stroke: #fff;
@@ -473,6 +474,10 @@
   background: rgba(250, 252, 249, 0.92);
   box-shadow: 0 15px 36px rgba(5, 31, 40, 0.24);
   backdrop-filter: blur(15px);
+}
+
+.routeDataStrip {
+  right: 22px;
 }
 
 .dataStrip span {
@@ -802,6 +807,14 @@
 
   .dataStrip span {
     padding: 5px;
+  }
+}
+
+@media (min-width: 901px) {
+  .routeLayerPanel {
+    opacity: 0;
+    transform: translateX(calc(100% + 36px));
+    pointer-events: none;
   }
 }
 
