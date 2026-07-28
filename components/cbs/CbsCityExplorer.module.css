@@ -345,7 +345,6 @@
   box-shadow: 0 10px 30px rgba(5, 31, 40, 0.2);
   font-size: 12px;
   font-weight: 900;
-  cursor: pointer;
 }
 
 .poiMarker,
@@ -361,29 +360,30 @@
 }
 
 .poiMarker {
-  width: 31px;
-  height: 31px;
+  width: 34px;
+  height: 34px;
   border: 2px solid #fff;
-  border-radius: 11px 11px 11px 2px;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
   cursor: pointer;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .poiMarker svg {
-  transform: rotate(45deg);
+  pointer-events: none;
 }
 
 .poiMarker > span {
   position: absolute;
-  left: 31px;
-  top: 19px;
+  left: 40px;
+  top: 50%;
   width: max-content;
   max-width: 130px;
   padding: 6px 8px;
   opacity: 0;
-  transform: rotate(45deg) translateY(4px);
+  transform: translateY(-50%) translateX(-4px);
   pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 8px;
   color: #fff;
   background: rgba(7, 38, 48, 0.94);
@@ -395,14 +395,14 @@
 .poiMarker:hover,
 .selectedPoi {
   z-index: 11;
-  transform: translate(-50%, -50%) rotate(-45deg) scale(1.18);
+  transform: translate(-50%, -50%) scale(1.12);
   box-shadow: 0 10px 24px rgba(3, 28, 36, 0.4);
 }
 
 .poiMarker:hover > span,
 .selectedPoi > span {
   opacity: 1;
-  transform: rotate(45deg) translateY(0);
+  transform: translateY(-50%) translateX(0);
 }
 
 .userMarker,
@@ -432,44 +432,27 @@
   filter: drop-shadow(0 3px 3px rgba(4, 30, 38, 0.4));
 }
 
-.routeOverlay path {
+.routeOverlay polyline {
   fill: none;
-  opacity: 0.25;
-  stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: opacity 180ms ease, stroke-width 180ms ease;
 }
 
+.routeInactive {
+  opacity: 0.26;
+  stroke-width: 6;
+}
+
+.routeHalo {
+  opacity: 0.88;
+  stroke: #fff;
+  stroke-width: 13;
+}
+
 .routeOverlay .routeActive {
   opacity: 1;
-  stroke-width: 11;
-}
-
-.zoomControl {
-  position: absolute;
-  z-index: 8;
-  right: 354px;
-  bottom: 90px;
-  display: grid;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(5, 31, 40, 0.2);
-}
-
-.zoomControl button {
-  width: 39px;
-  height: 37px;
-  border: 0;
-  color: var(--cbs-ink);
-  background: rgba(250, 252, 249, 0.92);
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.zoomControl button + button {
-  border-top: 1px solid #d5dfdb;
+  stroke-width: 8;
 }
 
 .dataStrip {
@@ -813,7 +796,6 @@
   }
 
   .locateButton,
-  .zoomControl,
   .dataStrip {
     right: 330px;
   }
@@ -913,10 +895,6 @@
     border-right: 0;
   }
 
-  .zoomControl {
-    right: 14px;
-    bottom: 136px;
-  }
 }
 
 @media (max-width: 560px) {
