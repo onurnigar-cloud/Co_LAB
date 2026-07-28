@@ -319,10 +319,15 @@ function findRoadPath(startNode: string, targetNode: string, route: RouteKey) {
 
 function buildRoute(target: Poi, route: RouteKey): RouteResult {
   const scenicWaypoint = target.x > 700 ? "parkPlaza" : "westRingN2";
+  const transitWaypoint = target.x > 1100 ? "r3" : null;
   const stops =
     route === "scenic" && target.accessNode !== scenicWaypoint
       ? [START_NODE, scenicWaypoint, target.accessNode]
-      : [START_NODE, target.accessNode];
+      : route === "transit" &&
+          transitWaypoint &&
+          target.accessNode !== transitWaypoint
+        ? [START_NODE, transitWaypoint, target.accessNode]
+        : [START_NODE, target.accessNode];
   const pointsOnRoad = stops.slice(1).flatMap((stop, index) => {
     const segment = findRoadPath(stops[index], stop, route);
     return index === 0 ? segment : segment.slice(1);
