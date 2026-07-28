@@ -97,7 +97,7 @@ const points: Poi[] = [
   { id: 4, name: "Kıyı Restoranı", detail: "Deniz ürünleri", layer: "restaurants", x: 234, y: 659, accessNode: "westRingS" },
   { id: 5, name: "Kent Müzesi", detail: "09.00–18.00", layer: "museums", x: 903, y: 395, accessNode: "museumGate" },
   { id: 6, name: "Modern Sanat Merkezi", detail: "10.00–20.00", layer: "museums", x: 167, y: 151, accessNode: "westRingN2" },
-  { id: 7, name: "Şehir Hastanesi", detail: "Acil servis", layer: "health", x: 1471, y: 160, accessNode: "h180f" },
+  { id: 7, name: "Şehir Hastanesi", detail: "Acil servis", layer: "health", x: 1471, y: 160, accessNode: "r0", access: { x: 1471, y: 95 } },
   { id: 8, name: "Merkez Eczane", detail: "Nöbetçi", layer: "health", x: 1154, y: 518, accessNode: "c4", access: { x: 1154, y: 560 } },
   { id: 9, name: "Güney Yakıt", detail: "24 saat", layer: "fuel", x: 1187, y: 743, accessNode: "c5", access: { x: 1187, y: 690 } },
   { id: 10, name: "Kıyı İstasyonu", detail: "24 saat", layer: "fuel", x: 368, y: 790, accessNode: "westSouth", access: { x: 368, y: 790 } },
@@ -143,12 +143,8 @@ const roadNodes: Record<string, MapPoint> = {
   r0: { x: 1560, y: 90 },
   farN: { x: 1640, y: 95 },
 
-  h180a: { x: 700, y: 180 },
-  h180b: { x: 900, y: 180 },
-  h180c: { x: 1050, y: 180 },
   c1: { x: 1205, y: 185 },
   r1: { x: 1560, y: 180 },
-  h180f: { x: 1500, y: 185 },
 
   p2: { x: 815, y: 370 },
   h330b: { x: 1000, y: 335 },
@@ -205,13 +201,6 @@ const roadEdges: RoadEdge[] = [
   { from: "northC", to: "c0", kind: "arterial" },
   { from: "c0", to: "r0", kind: "transit" },
   { from: "r0", to: "farN", kind: "transit" },
-
-  { from: "northA", to: "h180a", kind: "local" },
-  { from: "h180a", to: "h180b", kind: "arterial" },
-  { from: "h180b", to: "h180c", kind: "arterial" },
-  { from: "h180c", to: "c1", kind: "arterial" },
-  { from: "c1", to: "r1", kind: "transit" },
-  { from: "r1", to: "h180f", kind: "transit" },
 
   { from: "c0", to: "c1", kind: "arterial" },
   { from: "c1", to: "c2", kind: "arterial" },
