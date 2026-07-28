@@ -91,7 +91,7 @@ const layerMeta: Record<
 };
 
 const points: Poi[] = [
-  { id: 1, name: "Nehir Oteli", detail: "4,7 · 24 saat açık", layer: "hotels", x: 1271, y: 263, accessNode: "c2", access: { x: 1265, y: 330 } },
+  { id: 1, name: "Nehir Oteli", detail: "4,7 · 24 saat açık", layer: "hotels", x: 1271, y: 263, accessNode: "c2", access: { x: 1265, y: 350 } },
   { id: 2, name: "Park Konaklama", detail: "4,5 · Parka 2 dk", layer: "hotels", x: 987, y: 442, accessNode: "h450b", access: { x: 987, y: 450 } },
   { id: 3, name: "Çarşı Lokantası", detail: "Yerel mutfak", layer: "restaurants", x: 485, y: 518, accessNode: "oldMarket" },
   { id: 4, name: "Kıyı Restoranı", detail: "Deniz ürünleri", layer: "restaurants", x: 234, y: 659, accessNode: "westRingS" },
@@ -126,6 +126,8 @@ const roadNodes: Record<string, MapPoint> = {
   farS: { x: 1640, y: 650 },
 
   westSouth: { x: 340, y: 790 },
+  oldBottom1: { x: 420, y: 690 },
+  oldGateSouth: { x: 330, y: 680 },
   westRingS: { x: 235, y: 655 },
   westRingM1: { x: 205, y: 560 },
   westRingM2: { x: 180, y: 470 },
@@ -147,10 +149,10 @@ const roadNodes: Record<string, MapPoint> = {
   r1: { x: 1560, y: 180 },
 
   p2: { x: 815, y: 370 },
-  h330b: { x: 1000, y: 335 },
-  c2: { x: 1205, y: 330 },
-  r2: { x: 1560, y: 330 },
-  h330f: { x: 1500, y: 330 },
+  h330b: { x: 1000, y: 350 },
+  c2: { x: 1205, y: 350 },
+  r2: { x: 1560, y: 350 },
+  h330f: { x: 1500, y: 350 },
 
   p3: { x: 820, y: 450 },
   museumGate: { x: 900, y: 450 },
@@ -184,8 +186,10 @@ const roadEdges: RoadEdge[] = [
   { from: "c5", to: "r5", kind: "transit" },
   { from: "r5", to: "farS", kind: "transit" },
 
-  { from: "start", to: "westSouth", kind: "scenic" },
-  { from: "westSouth", to: "westRingS", kind: "scenic" },
+  { from: "start", to: "oldBottom1", kind: "scenic" },
+  { from: "oldBottom1", to: "oldGateSouth", kind: "scenic" },
+  { from: "oldGateSouth", to: "westRingS", kind: "scenic" },
+  { from: "oldGateSouth", to: "westSouth", kind: "local" },
   { from: "westRingS", to: "westRingM1", kind: "scenic" },
   { from: "westRingM1", to: "westRingM2", kind: "scenic" },
   { from: "westRingM2", to: "westRingM3", kind: "scenic" },
@@ -307,7 +311,12 @@ function findRoadPath(startNode: string, targetNode: string, route: RouteKey) {
 }
 
 function buildRoute(target: Poi, route: RouteKey): RouteResult {
-  const scenicWaypoint = target.x > 700 ? "parkPlaza" : "westRingN2";
+  const scenicWaypoint =
+    target.accessNode === "parkPlaza"
+      ? "parkPlaza"
+      : target.x > 700
+        ? "northBridgeE"
+        : "westRingN2";
   const transitWaypoint = target.x > 1100 ? "r3" : null;
   const stops =
     route === "scenic" && target.accessNode !== scenicWaypoint
